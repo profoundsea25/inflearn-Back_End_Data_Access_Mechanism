@@ -13,6 +13,7 @@ import org.springframework.context.annotation.Bean;
 import study.jdbc.domain.Member;
 import study.jdbc.repository.MemberRepository;
 import study.jdbc.repository.MemberRepositoryV4_1;
+import study.jdbc.repository.MemberRepositoryV4_2;
 
 import javax.sql.DataSource;
 import java.sql.SQLException;
@@ -53,7 +54,8 @@ class MemberServiceV4Test {
 
         @Bean
         MemberRepository memberRepository() {
-            return new MemberRepositoryV4_1(dataSource); // 단순 예외 변환
+//            return new MemberRepositoryV4_1(dataSource); // 단순 예외 변환
+            return new MemberRepositoryV4_2(dataSource); // 스프링 예외 반환
         }
 
         @Bean
